@@ -1,0 +1,23 @@
+<launch>
+  <node pkg="second_project" type="scan_combiner_node" name="scan_combiner" output="screen"/>
+  
+  <!-- Fixed: properly closed odom_to_tf node -->
+  <node pkg="second_project" type="odom_to_tf" name="odom_to_tf" output="screen"/>
+
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+    <param name="maxUrange" value="88" /> 
+    <param name="maxRange" value="100" /> 
+    <param name="linearUpdate" value="1" />
+    <param name="angularUpdate" value="0.5" />
+    <param name="particles" value="65" /> 
+    <param name="resampleThreshold" value="0.5" />
+    <param name="delta" value="0.05" />
+    <param name="xmin" value="-10.0" />
+    <param name="xmax" value="10.0" /> 
+    <param name="ymin" value="-10.0" /> 
+    <param name="ymax" value="10.0" /> 
+  </node>
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find second_project)/rviz/rviz_config.rviz" />
+</launch>
+

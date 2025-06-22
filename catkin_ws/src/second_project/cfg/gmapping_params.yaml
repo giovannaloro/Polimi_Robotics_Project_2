@@ -1,0 +1,16 @@
+maxUrange: 0         # Max range of laser (used for mapping)
+maxRange: 0          # Also limits readings considered
+minimumScore: 220      # Filter bad particles
+linearUpdate: 0.1      # Minimum travel (m) before update
+angularUpdate: 0.1     # Minimum angle (rad) before update
+temporalUpdate: 2.0    # Max time (s) between updates
+particles: 0          # Number of particles in particle filter
+resampleThreshold: 0.5 # Resampling threshold
+xmin: -10.0            # Map bounds
+xmax: 10.0
+ymin: -10.0
+ymax: 10.0
+delta: 0.05            # Map resolution (meters)
+llsamplerange: 0.01    # Odometry noise model (translation)
+lasamplerange: 0.005   # Odometry noise model (rotation)
+lskip: 10
